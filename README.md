@@ -33,7 +33,7 @@ v |= v >> 16;
 v++;
 ```
 
-** Round up to the pre power of two **
+**Round up to the pre power of two**
 ```
 unsigned int v; // only works if v is 32 bits
 
