@@ -32,6 +32,19 @@ v |= v >> 8;
 v |= v >> 16;
 v++;
 ```
+
+** Round up to the pre power of two **
+```
+unsigned int v; // only works if v is 32 bits
+
+v |= v >>1;
+v |= v >>2;
+v |= v >>4;
+v |= v >>8;
+v |= v >>16;
+return v - (v >>> 1);
+```
+
 **Get the maximum integer**
 ```
 int maxInt = ~(1 << 31);
