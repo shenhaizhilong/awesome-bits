@@ -33,15 +33,15 @@ v |= v >> 16;
 v++;
 ```
 
-**Round up to the pre power of two**
+**Round up to the pre power of two/ highest one bit**
 ```
 unsigned int v; // only works if v is 32 bits
 
-v |= v >>1;
-v |= v >>2;
-v |= v >>4;
-v |= v >>8;
-v |= v >>16;
+v |= v >> 1;
+v |= v >> 2;
+v |= v >> 4;
+v |= v >> 8;
+v |= v >> 16;
 return v - (v >>> 1);
 ```
 
@@ -155,7 +155,7 @@ if (x & (1<<n)) {
   n-th bit is not set
 }
 ```
-**Isolate (extract) the right-most 1 bit**
+**Isolate (extract) the right-most 1 bit/lowest one bit**
 ```
 x & (-x)
 ```
